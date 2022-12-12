@@ -23,3 +23,5 @@ zipp==3.8.1
 
 oauthlib~=3.2.1
 python-dotenv~=0.21.0
+WTForms~=3.0.1
+python-dateutil~=2.8.2
