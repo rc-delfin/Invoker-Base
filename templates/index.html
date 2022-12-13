@@ -29,7 +29,7 @@
             border:1px solid #999999;
             background-color: #ececec;
             border-radius:10px;
-            padding:40px 0;
+            padding:40px 20px;
             max-width:280px;
         }
     </style>
@@ -39,24 +39,21 @@
             <div class="col-sm"></div>
             <div class="col-sm" id="mid-column">
                 <h3>Lambda Invoker</h3>
-                <div class="buttonRow">
-                    <a class="btn btn-primary" href="{{ url_for('foo', my_var='b1') }}">1</a>
-                    <a class="btn btn-primary" href="{{ url_for('foo', my_var='b2') }}">2</a>
-                    <a class="btn btn-primary" href="{{ url_for('foo', my_var='b3') }}">3</a>
-                </div>
-                <div class="buttonRow">
-                    <a class="btn btn-primary" href="{{ url_for('foo', my_var='b4') }}">4</a>
-                    <a class="btn btn-primary" href="{{ url_for('foo', my_var='b5') }}">5</a>
-                    <a class="btn btn-primary" href="{{ url_for('foo', my_var='b6') }}">6</a>
-                </div>
-                <div class="buttonRow">
-                    <a class="btn btn-primary" href="{{ url_for('foo', my_var='b7') }}">7</a>
-                    <a class="btn btn-primary" href="{{ url_for('foo', my_var='b8') }}">8</a>
-                    <a class="btn btn-primary" href="{{ url_for('foo', my_var='b9') }}">9</a>
-                </div>
-                <div class="buttonRow">
-                    <a class="btn btn-primary" href="{{ url_for('foo', my_var='b0') }}">0</a>
-                </div>
+                <form action="{{ url_for('foo') }}" method="POST">
+                <select name="lambda_selector" id="lambda_selector" class="form-select" aria-label="Default select example">
+                    <option value="b0" selected>Select Lambda to invoke</option>
+                    <option value="b1">AD0 - Account expires</option>
+                    <option value="b2">AD1 - OneCG fields</option>
+                    <option value="b3">AD2 - Account Request</option>
+                    <option value="b4">AD3 - OneCG 2 attribs</option>
+                    <option value="b5">Country holidays - GSheet</option>
+                    <option value="b6">Change in POSNO alert</option>
+                    <option value="b7">FO Alert</option>
+                    <option value="b8">AD4 - Multiple CSVs for AD</option>
+                    <option value="b9">AB webprofiles updates (P20-28)</option>
+                </select>
+                <button type="submit" class="btn btn-primary">Invoke Lambda</button>
+                </form>
             </div>
             <div class="col-sm"></div>
         </div>

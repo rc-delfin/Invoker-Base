@@ -57,27 +57,29 @@ def token_expired(_):
 
 @app.route('/foo', methods=['GET', 'POST'])
 def foo():
-    my_var = request.args.get('my_var', None)
-    if my_var == "b1":
+    value = request.form.get('lambda_selector')
+    if value == "b1":
         invoke_lambda.run_lambda1()
-    elif my_var == "b2":
+    elif value == "b2":
         invoke_lambda.run_lambda2()
-    elif my_var == "b3":
+    elif value == "b3":
         invoke_lambda.run_lambda3()
-    elif my_var == "b4":
+    elif value == "b4":
         invoke_lambda.run_lambda4()
-    elif my_var == "b5":
+    elif value == "b5":
         invoke_lambda.run_lambda5()
-    elif my_var == "b6":
+    elif value == "b6":
         invoke_lambda.run_lambda6()
-    elif my_var == "b7":
+    elif value == "b7":
         invoke_lambda.run_lambda7()
-    elif my_var == "b8":
+    elif value == "b8":
         invoke_lambda.run_lambda8()
-    elif my_var == "b9":
+    elif value == "b9":
         invoke_lambda.run_lambda9()
     else:
-        invoke_lambda.run_lambda0()
+        pass
+
+    print(str(value))  # just to see what was selected
 
     return render_template('index.html')
 
@@ -86,7 +88,10 @@ def foo():
 def landing_page():
     if not google.authorized:
         return redirect(url_for("google.login"))
-    return render_template('index.html')
+
+    listStatus = [('cpp', 'C++'), ('py', 'Python'), ('text', 'Plain Text')]
+    default = 'cpp'
+    return render_template('index.html', listStatus=listStatus, default=default)
 
 
 if __name__ == '__main__':

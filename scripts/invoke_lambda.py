@@ -14,87 +14,78 @@ def run_lambda1():
     print("Lambda 1 ran")
     rn = get_rand()
     if rn % 2 == 0:
-        flash("Button 1 pressed. Lambda invocation successful")
+        flash("Option 1 selected. Lambda invocation successful")
     else:
-        flash("Button 1 pressed. Lambda invocation failed")
+        flash("Option 1 selected. Lambda invocation failed")
 
 
 def run_lambda2():
     print("Lambda 2 ran")
     rn = get_rand()
     if rn % 2 == 0:
-        flash("Button 2 pressed. Lambda invocation successful")
+        flash("Option 2 selected. Lambda invocation successful")
     else:
-        flash("Button 2 pressed. Lambda invocation failed")
+        flash("Option 2 selected. Lambda invocation failed")
 
 
 def run_lambda3():
     print("Lambda 3 ran")
     rn = get_rand()
     if rn % 2 == 0:
-        flash("Button 3 pressed. Lambda invocation successful")
+        flash("Option 3 selected. Lambda invocation successful")
     else:
-        flash("Button 3 pressed. Lambda invocation failed")
+        flash("Option 3 selected. Lambda invocation failed")
 
 
 def run_lambda4():
     print("Lambda 4 ran")
     rn = get_rand()
     if rn % 2 == 0:
-        flash("Button 4 pressed. Lambda invocation successful")
+        flash("Option 4 selected. Lambda invocation successful")
     else:
-        flash("Button 4 pressed. Lambda invocation failed")
+        flash("Option 4 selected. Lambda invocation failed")
 
 
 def run_lambda5():
     print("Lambda 5 ran")
     rn = get_rand()
     if rn % 2 == 0:
-        flash("Button 5 pressed. Lambda invocation successful")
+        flash("Option 5 selected. Lambda invocation successful")
     else:
-        flash("Button 5 pressed. Lambda invocation failed")
+        flash("Option 5 selected. Lambda invocation failed")
 
 
 def run_lambda6():
     print("Lambda 6 ran")
     rn = get_rand()
     if rn % 2 == 0:
-        flash("Button 6 pressed. Lambda invocation successful")
+        flash("Option 6 selected. Lambda invocation successful")
     else:
-        flash("Button 6 pressed. Lambda invocation failed")
+        flash("Option 6 selected. Lambda invocation failed")
 
 
 def run_lambda7():
     print("Lambda 7 ran")
     rn = get_rand()
     if rn % 2 == 0:
-        flash("Button 7 pressed. Lambda invocation successful")
+        flash("Option 7 selected. Lambda invocation successful")
     else:
-        flash("Button 7 pressed. Lambda invocation failed")
+        flash("Option 7 selected. Lambda invocation failed")
 
 
 def run_lambda8():
     print("Lambda 8 ran")
     rn = get_rand()
     if rn % 2 == 0:
-        flash("Button 8 pressed. Lambda invocation successful")
+        flash("Option 8 selected. Lambda invocation successful")
     else:
-        flash("Button 8 pressed. Lambda invocation failed")
+        flash("Option 8 selected. Lambda invocation failed")
 
 
 def run_lambda9():
     print("Lambda 9 ran")
     rn = get_rand()
     if rn % 2 == 0:
-        flash("Button 9 pressed. Lambda invocation successful")
+        flash("Option 9 selected. Lambda invocation successful")
     else:
-        flash("Button 9 pressed. Lambda invocation failed")
-
-
-def run_lambda0():
-    print("Lambda 0 ran")
-    rn = get_rand()
-    if rn % 2 == 0:
-        flash("Button 0 pressed. Lambda invocation successful")
-    else:
-        flash("Button 0 pressed. Lambda invocation failed")
+        flash("Option 9 selected. Lambda invocation failed")
