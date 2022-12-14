@@ -69,9 +69,10 @@ def token_expired(_):
 @app.route('/foo', methods=['GET', 'POST'])
 def foo():
     value = request.form.get('lambda_selector')
-    invoke_lambda.run_lambda(value)
+    if value:
+        invoke_lambda.run_lambda(value)
 
-    print(str(value))  # just to see what was selected
+    print("Value: " + str(value))  # just to see what was selected
     return render_template('index.html', lambdas=lambdas)
 
 
