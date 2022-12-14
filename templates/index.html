@@ -24,38 +24,49 @@
         .buttonRow {
             margin-bottom:5px;
         }
+        #submit_button {
+            float:right;
+            margin-top:30px;
+        }
         #mid-column {
             text-align: center;
             border:1px solid #999999;
             background-color: #ececec;
-            border-radius:10px;
+            bborder-radius:10px;
             padding:40px 20px;
-            max-width:280px;
+            max-width:100%;
+        }
+        ::-webkit-scrollbar {
+            width: 25px;
+        }
+        ::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(200,200,200,1);
+            bborder-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            bborder-radius: 10px;
+            background-color:#fff;
+            -webkit-box-shadow: inset 0 0 6px rgba(90,90,90,0.7);
         }
     </style>
 
     <div class="container">
         <div class="row">
-            <div class="col-sm"></div>
-            <div class="col-sm" id="mid-column">
+            <div class="col-md-3"></div>
+            <div class="col-md-6" id="mid-column">
                 <h3>Lambda Invoker</h3>
                 <form action="{{ url_for('foo') }}" method="POST">
-                <select name="lambda_selector" id="lambda_selector" class="form-select" aria-label="Default select example">
-                    <option value="b0" selected>Select Lambda to invoke</option>
-                    <option value="b1">AD0 - Account expires</option>
-                    <option value="b2">AD1 - OneCG fields</option>
-                    <option value="b3">AD2 - Account Request</option>
-                    <option value="b4">AD3 - OneCG 2 attribs</option>
-                    <option value="b5">Country holidays - GSheet</option>
-                    <option value="b6">Change in POSNO alert</option>
-                    <option value="b7">FO Alert</option>
-                    <option value="b8">AD4 - Multiple CSVs for AD</option>
-                    <option value="b9">AB webprofiles updates (P20-28)</option>
+                <select class="form-select" size="5" name="lambda_selector">
+                    {% for entry in lambdas %}
+                        {% for key, value in entry.items() %}
+                            <option value="{{key}}" {% if value=='Red' %} SELECTED {% endif %}>{{value}}</option>
+                        {% endfor %}
+                    {% endfor %}
                 </select>
-                <button type="submit" class="btn btn-primary">Invoke Lambda</button>
+                <button type="submit" id="submit_button" class="btn btn-primary">Invoke Lambda</button>
                 </form>
             </div>
-            <div class="col-sm"></div>
+            <div class="col-md-3"></div>
         </div>
     </div>
 

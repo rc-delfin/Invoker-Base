@@ -48,6 +48,17 @@ google_bp = make_google_blueprint(
 app.register_blueprint(google_bp, url_prefix="/login")
 
 
+lambdas = [{"b1": "AD0 - Account expires"},
+           {"b2": "AD1 - OneCG fields"},
+           {"b3": "AD2 - Account Request"},
+           {"b4": "AD3 - OneCG 2 attribs"},
+           {"b5": "AD4 - Multiple CSVs for AD"},
+           {"b6": "Country holidays - GSheet"},
+           {"b7": "Change in POSNO alert"},
+           {"b8": "FO Alert"},
+           {"b9": "AB webprofiles updates (P20-28)"}]
+
+
 @app.errorhandler(oauthlib.oauth2.rfc6749.errors.TokenExpiredError)
 @app.errorhandler(oauthlib.oauth2.rfc6749.errors.InvalidClientIdError)
 def token_expired(_):
@@ -81,7 +92,7 @@ def foo():
 
     print(str(value))  # just to see what was selected
 
-    return render_template('index.html')
+    return render_template('index.html', lambdas=lambdas)
 
 
 @app.route('/', methods=["GET", "POST"])
@@ -89,9 +100,7 @@ def landing_page():
     if not google.authorized:
         return redirect(url_for("google.login"))
 
-    listStatus = [('cpp', 'C++'), ('py', 'Python'), ('text', 'Plain Text')]
-    default = 'cpp'
-    return render_template('index.html', listStatus=listStatus, default=default)
+    return render_template('index.html', lambdas=lambdas)
 
 
 if __name__ == '__main__':
