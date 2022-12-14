@@ -48,15 +48,15 @@ google_bp = make_google_blueprint(
 app.register_blueprint(google_bp, url_prefix="/login")
 
 
-lambdas = [{"b1": "AD0 - Account expires"},
-           {"b2": "AD1 - OneCG fields"},
-           {"b3": "AD2 - Account Request"},
-           {"b4": "AD3 - OneCG 2 attribs"},
-           {"b5": "AD4 - Multiple CSVs for AD"},
-           {"b6": "Country holidays - GSheet"},
-           {"b7": "Change in POSNO alert"},
-           {"b8": "FO Alert"},
-           {"b9": "AB webprofiles updates (P20-28)"}]
+lambdas = [{"b1": "Account expires"},
+           {"b2": "OneCG fields"},
+           {"b3": "Account Request"},
+           {"b4": "OneCG 2 attribs"},
+           {"b5": "Multiple CSVs for AD"},
+           {"b6": "Country holidays"},
+           {"b7": "Change in POSNO"},
+           {"b8": "Funding Opportunities"},
+           {"b9": "AB webprofiles updates"}]
 
 
 @app.errorhandler(oauthlib.oauth2.rfc6749.errors.TokenExpiredError)
@@ -69,29 +69,9 @@ def token_expired(_):
 @app.route('/foo', methods=['GET', 'POST'])
 def foo():
     value = request.form.get('lambda_selector')
-    if value == "b1":
-        invoke_lambda.run_lambda1()
-    elif value == "b2":
-        invoke_lambda.run_lambda2()
-    elif value == "b3":
-        invoke_lambda.run_lambda3()
-    elif value == "b4":
-        invoke_lambda.run_lambda4()
-    elif value == "b5":
-        invoke_lambda.run_lambda5()
-    elif value == "b6":
-        invoke_lambda.run_lambda6()
-    elif value == "b7":
-        invoke_lambda.run_lambda7()
-    elif value == "b8":
-        invoke_lambda.run_lambda8()
-    elif value == "b9":
-        invoke_lambda.run_lambda9()
-    else:
-        pass
+    invoke_lambda.run_lambda(value)
 
     print(str(value))  # just to see what was selected
-
     return render_template('index.html', lambdas=lambdas)
 
 

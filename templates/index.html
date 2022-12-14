@@ -1,5 +1,10 @@
 {% extends 'base.html' %} {% block body %}
     <style>
+        @media only screen and (min-width: 451px) {
+            #submit_button {
+                float:right;
+            }
+        }
         * {
             font-family: 'Open Sans', sans-serif;
         }
@@ -25,14 +30,12 @@
             margin-bottom:5px;
         }
         #submit_button {
-            float:right;
             margin-top:30px;
         }
         #mid-column {
             text-align: center;
             border:1px solid #999999;
             background-color: #ececec;
-            bborder-radius:10px;
             padding:40px 20px;
             max-width:100%;
         }
@@ -41,10 +44,8 @@
         }
         ::-webkit-scrollbar-track {
             -webkit-box-shadow: inset 0 0 6px rgba(200,200,200,1);
-            bborder-radius: 10px;
         }
         ::-webkit-scrollbar-thumb {
-            bborder-radius: 10px;
             background-color:#fff;
             -webkit-box-shadow: inset 0 0 6px rgba(90,90,90,0.7);
         }

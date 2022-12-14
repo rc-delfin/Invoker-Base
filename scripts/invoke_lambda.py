@@ -10,82 +10,40 @@ def get_rand():
     return r1
 
 
-def run_lambda1():
-    print("Lambda 1 ran")
-    rn = get_rand()
+def success_fail(rn, value):
     if rn % 2 == 0:
-        flash("Option 1 selected. Lambda invocation successful")
+        flash("Option " + value + " selected. Lambda invocation successful")
     else:
-        flash("Option 1 selected. Lambda invocation failed")
+        flash("Option " + value + " selected. Lambda invocation failed")
 
-
-def run_lambda2():
-    print("Lambda 2 ran")
+def run_lambda(value):
     rn = get_rand()
-    if rn % 2 == 0:
-        flash("Option 2 selected. Lambda invocation successful")
+    if value == "b1":
+        print("Lambda 1 ran")
+        success_fail(rn, value)
+    elif value == "b2":
+        print("Lambda 2 ran")
+        success_fail(rn, value)
+    elif value == "b3":
+        print("Lambda 3 ran")
+        success_fail(rn, value)
+    elif value == "b4":
+        print("Lambda 4 ran")
+        success_fail(rn, value)
+    elif value == "b5":
+        print("Lambda 5 ran")
+        success_fail(rn, value)
+    elif value == "b6":
+        print("Lambda 6 ran")
+        success_fail(rn, value)
+    elif value == "b7":
+        print("Lambda 7 ran")
+        success_fail(rn, value)
+    elif value == "b8":
+        print("Lambda 8 ran")
+        success_fail(rn, value)
+    elif value == "b9":
+        print("Lambda 9 ran")
+        success_fail(rn, value)
     else:
-        flash("Option 2 selected. Lambda invocation failed")
-
-
-def run_lambda3():
-    print("Lambda 3 ran")
-    rn = get_rand()
-    if rn % 2 == 0:
-        flash("Option 3 selected. Lambda invocation successful")
-    else:
-        flash("Option 3 selected. Lambda invocation failed")
-
-
-def run_lambda4():
-    print("Lambda 4 ran")
-    rn = get_rand()
-    if rn % 2 == 0:
-        flash("Option 4 selected. Lambda invocation successful")
-    else:
-        flash("Option 4 selected. Lambda invocation failed")
-
-
-def run_lambda5():
-    print("Lambda 5 ran")
-    rn = get_rand()
-    if rn % 2 == 0:
-        flash("Option 5 selected. Lambda invocation successful")
-    else:
-        flash("Option 5 selected. Lambda invocation failed")
-
-
-def run_lambda6():
-    print("Lambda 6 ran")
-    rn = get_rand()
-    if rn % 2 == 0:
-        flash("Option 6 selected. Lambda invocation successful")
-    else:
-        flash("Option 6 selected. Lambda invocation failed")
-
-
-def run_lambda7():
-    print("Lambda 7 ran")
-    rn = get_rand()
-    if rn % 2 == 0:
-        flash("Option 7 selected. Lambda invocation successful")
-    else:
-        flash("Option 7 selected. Lambda invocation failed")
-
-
-def run_lambda8():
-    print("Lambda 8 ran")
-    rn = get_rand()
-    if rn % 2 == 0:
-        flash("Option 8 selected. Lambda invocation successful")
-    else:
-        flash("Option 8 selected. Lambda invocation failed")
-
-
-def run_lambda9():
-    print("Lambda 9 ran")
-    rn = get_rand()
-    if rn % 2 == 0:
-        flash("Option 9 selected. Lambda invocation successful")
-    else:
-        flash("Option 9 selected. Lambda invocation failed")
+        pass
