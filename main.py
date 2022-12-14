@@ -44,9 +44,9 @@ google_bp = make_google_blueprint(
     ],
     redirect_to="landing_page",
 )
+open_gate = os.environ.get("OPEN_GATE")
 
 app.register_blueprint(google_bp, url_prefix="/login")
-
 
 lambdas = [{"b1": "Account expires"},
            {"b2": "OneCG fields"},
@@ -68,6 +68,9 @@ def token_expired(_):
 
 @app.route('/foo', methods=['GET', 'POST'])
 def foo():
+    if not google.authorized:
+        return redirect(url_for("landing_page"))
+
     value = request.form.get('lambda_selector')
     if value:
         invoke_lambda.run_lambda(value)
@@ -81,7 +84,17 @@ def landing_page():
     if not google.authorized:
         return redirect(url_for("google.login"))
 
-    return render_template('index.html', lambdas=lambdas)
+    resp = google.get("/oauth2/v2/userinfo")
+    assert resp.ok, resp.text
+    email = resp.json()["email"]
+
+    print(email)  # debug code, can be removed
+    print(open_gate)  # debug code, can be removed
+
+    if email in open_gate:
+        return render_template('index.html', lambdas=lambdas)
+
+    return "<h1>Forbidden: Unauthorized Access</h1>", 403
 
 
 if __name__ == '__main__':
