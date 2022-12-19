@@ -48,7 +48,8 @@ open_gate = os.environ.get("OPEN_GATE")
 
 app.register_blueprint(google_bp, url_prefix="/login")
 
-lambdas = [{"b1": "Account expires"},
+lambdas = [{"b0": "Select lambda to invoke"},
+           {"b1": "Account expires"},
            {"b2": "OneCG fields"},
            {"b3": "Account Request"},
            {"b4": "OneCG 2 attribs"},

@@ -18,5 +18,6 @@ def success_fail(rn, value):
 
 
 def run_lambda(value):
-    rn = get_rand()
-    success_fail(rn, value)
+    if value != 'b0':
+        rn = get_rand()
+        success_fail(rn, value)

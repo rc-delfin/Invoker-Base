@@ -5,11 +5,6 @@
                 float:right;
             }
         }
-        @media only screen and (max-width: 450px) {
-            .form-select {
-                height:130px;
-            }
-        }
         * {
             font-family: 'Open Sans', sans-serif;
         }
@@ -65,7 +60,7 @@
                 <select class="form-select" size="5" name="lambda_selector">
                     {% for entry in lambdas %}
                         {% for key, value in entry.items() %}
-                            <option value="{{key}}" {% if value=='Red' %} SELECTED {% endif %}>{{value}}</option>
+                            <option value="{{key}}" {% if value=='Select lambda to invoke' %} SELECTED {% endif %}>{{value}}</option>
                         {% endfor %}
                     {% endfor %}
                 </select>
