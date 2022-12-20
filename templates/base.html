@@ -22,24 +22,11 @@
   <!-- JQuery for Modal -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='menu_style.css') }}">
+
   <!-- Modify Bootstrap Elements-->
   <style>
-    * {
-      font-family: 'Open Sans', 'Roboto', sans-serif;
-      font-size: 1em;
-    }
-    .container {
-      padding-bottom: 40px;
-    }
-    .alert {
-      border:1px solid #999999;
-      position:fixed;
-      left: 50%;
-      transform: translate(-50%, 100%);
-      box-shadow: 0 0 8px #888888;
-      padding: 0;
-      min-width:280px;
-    }
+
   </style>
 
   <title>Lambda Invoker</title>
@@ -47,11 +34,12 @@
 
 
 <body>
-  <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-success" style="margin-bottom:50px;padding-left:20px;">
+  <nav id="navbar" class="navbar navbar-expand-lg sticky-top navbar-dark bg-success" style="margin-bottom:0px;padding-left:20px;">
     <a class="navbar-brand mb-0 h1" href={{ gohome }}>
       <span style="font-weight:300;">Lambda Invoker</span>
     </a>
   </nav>
+  <div id="color_runner"></div>
 
   <div class="container">
     {% block body %}{% endblock %}

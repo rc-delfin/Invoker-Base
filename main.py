@@ -64,7 +64,7 @@ lambdas = [{"b0": "Select lambda to invoke"},
 @app.errorhandler(oauthlib.oauth2.rfc6749.errors.InvalidClientIdError)
 def token_expired(_):
     _empty_session()
-    return redirect(url_for("login"))
+    return redirect(url_for("landing_page"))
 
 
 @app.route('/foo', methods=['GET', 'POST'])
