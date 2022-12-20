@@ -48,16 +48,28 @@ open_gate = os.environ.get("OPEN_GATE")
 
 app.register_blueprint(google_bp, url_prefix="/login")
 
-lambdas = [{"b0": "Select lambda to invoke"},
-           {"b1": "Account expires"},
-           {"b2": "OneCG fields"},
-           {"b3": "Account Request"},
-           {"b4": "OneCG 2 attribs"},
-           {"b5": "Multiple CSVs for AD"},
-           {"b6": "Country holidays"},
-           {"b7": "Change in POSNO"},
-           {"b8": "Funding Opportunities"},
-           {"b9": "AB webprofiles updates"}]
+# lambdas = [{"b0": "Select lambda to invoke"},
+#            {"b1": "Account expires"},
+#            {"b2": "OneCG fields"},
+#            {"b3": "Account Request"},
+#            {"b4": "OneCG 2 attribs"},
+#            {"b5": "Multiple CSVs for AD"},
+#            {"b6": "Country holidays"},
+#            {"b7": "Change in POSNO"},
+#            {"b8": "Funding Opportunities"},
+#            {"b9": "AB webprofiles updates"}]
+
+lambdas = [{"": "Select lambda to invoke"},
+           {"p21-28-prod-ad0": "AD0 Account expires"},
+           {"p21-28-prod-ad1": "AD1 OneCG fields"},
+           {"mis-p22-21-ad2-prod": "AD2 Account Request"},
+           {"p22-21-b-prod-b": "AD3 2 attribs"},
+           {"mis-p22-27-prod": "AD4 Multiple CSVs for AD"},
+           {"p21-02-prod": "Country holidays"},
+           {"mis-p20-09-prod": "Change in POSNO"},
+           {"mis-p22-18-prod": "Funding Opportunities"},
+           {"p20-28-prod": "AB webprofiles updates"},
+           {"mis-p19-12-prod": "Budget notification"}]
 
 
 @app.errorhandler(oauthlib.oauth2.rfc6749.errors.TokenExpiredError)

@@ -9,7 +9,7 @@
                     <select name="lambda_selector">
                         {% for entry in lambdas %}
                             {% for key, value in entry.items() %}
-                                <option value="{{key}}" {% if value=='Select lambda to invoke' %} SELECTED {% endif %}>{{value}}</option>
+                                <option value="{{key}}" {% if value=='Select lambda to invoke' %} SELECTED {% endif %}>{{value}}  <b>{{key}}</b></option>
                             {% endfor %}
                         {% endfor %}
                     </select>

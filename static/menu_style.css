@@ -142,3 +142,24 @@
 		background-position: 0% 50%;
 	}
 }
+
+/* runner */
+  #runner {
+      width: 20px;
+      height: 22px;
+      position: relative;
+      animation: myfirst 10s;
+      border-radius:300px;
+      background-size: contain;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+  }
+  #runner_container {
+      position:fixed;
+      bottom:0;
+      width:100%
+  }
+  @keyframes myfirst {
+      0%   {left: -200px; top: 0px;}
+      100%  {left: 100%; top: 0px;}
+  }
